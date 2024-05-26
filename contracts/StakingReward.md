@@ -1,0 +1,6 @@
+- there is no immutable in solidity 0.5.16 but if we would use modern version we could make rewardsToken and stakingToken immutable. If not it is still possible to use hardcoded constant
+- periodFinish, rewardsDuration, lastUpdateTime can be packed to one storage. uint256 -> uint64 or something like that
+- line 114. "<" operator should be more gas efficient
+- line 144. Error message is 88 bytes. Can be reduced to fit 32 bytes
+- line 58. ternary and max from openzeppelin Math library could reduce gas cost
+- line 152. updateReward could cache some storage to memory since it is used in functions further on
